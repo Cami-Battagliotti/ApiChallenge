@@ -1,5 +1,5 @@
 import { getAllData, getSelectedData } from "../DB";
-import { ResponseStatus } from "../utils/messages";
+import { ResponseStatus } from "../utils/responseMsg";
 
 class CountriesModels {
   async getAllCountries() {
@@ -7,7 +7,8 @@ class CountriesModels {
   }
 
   async getByCountryCommonName(countryName: string) {
-    const allCountries = await this.getAllCountries();
+    const allCountries = await getAllData();
+    //const allCountries = await this.getAllCountries();
     const filteredCountries = allCountries.filter((el) =>
       el.name.common.toLowerCase().includes(countryName.toLowerCase())
     );
@@ -38,7 +39,8 @@ class CountriesModels {
     if (!countryCapital.length) {
       return ResponseStatus.NOT_FOUND;
     }
-    return countryCapital;
+
+    return countryCapital[0];
   }
 
   // async getByRegion(region: string) {
@@ -59,7 +61,7 @@ const {
   getByCapital,
 } = countries;
 
-//countries.getByRegion("sarasa");
+//countries.getByCapital("london");
 
 export {
   getAllCountries,

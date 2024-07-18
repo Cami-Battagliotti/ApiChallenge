@@ -1,13 +1,12 @@
 import net from "net";
 import { PORT } from "./constants";
-import { endpointsOptions } from "./app";
+import { main } from "./app";
 
 const server = net.createServer();
 
 server.on("connection", (socket) => {
   socket.on("data", async (clientRequest) => {
-    const clientFeedback = await endpointsOptions(clientRequest);
-
+    const clientFeedback = await main(clientRequest);
     socket.write(clientFeedback);
   });
 });

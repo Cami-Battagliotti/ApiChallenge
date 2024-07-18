@@ -5,47 +5,40 @@ import {
   getByCurrency,
   getByLanguage,
 } from "../models/countries";
-import { ResponseStatus } from "../utils/messages";
+import { validateParameter } from "../utils/aux_functions";
 
 class CountriesControllers {
   async getAllCountries() {
     return await getAllCountries();
   }
-  async getByCapital(capitalCity: string) {
-    if (!capitalCity) {
-      return ResponseStatus.MISSING_DATA;
-    } else if (typeof capitalCity != "string") {
-      return ResponseStatus.BAD_REQUEST;
-    }
-    return await getByCapital(capitalCity);
+  async getByCapital(city: string) {
+    return await getByCapital(city);
   }
-  async getByCountryCommonName(countryName: string) {
-    if (!countryName) {
-      return ResponseStatus.MISSING_DATA;
-    } else if (typeof countryName != "string") {
-      return ResponseStatus.BAD_REQUEST;
+  async getByCountryCommonName(clientRequest) {
+    // if (!countryName) {
+    //   return ResponseStatus.MISSING_DATA;
+    // } else if (typeof countryName != "string") {
+    //   return ResponseStatus.BAD_REQUEST;
+    // }
+    const validParameter = validateParameter(clientRequest);
+    if (typeof validParameter == "string") {
+      return validParameter;
     }
-    return await getByCountryCommonName(countryName);
+    return await getByCountryCommonName(clientRequest.parameterName);
   }
-  async getByCurrency(currencyName: string) {
-    if (!currencyName) {
-      console.log(ResponseStatus.MISSING_DATA);
-
-      return ResponseStatus.MISSING_DATA;
-    } else if (typeof currencyName != "string") {
-      console.log(ResponseStatus.BAD_REQUEST);
-
-      return ResponseStatus.BAD_REQUEST;
+  async getByCurrency(clientRequest) {
+    const validParameter = validateParameter(clientRequest);
+    if (typeof validParameter == "string") {
+      return validParameter;
     }
-    return await getByCurrency(currencyName);
+    return await getByCurrency(clientRequest.parameterName);
   }
-  async getByLanguage(language: string) {
-    if (!language) {
-      return ResponseStatus.MISSING_DATA;
-    } else if (typeof language != "string") {
-      return ResponseStatus.BAD_REQUEST;
+  async getByLanguage(clientRequest) {
+    const validParameter = validateParameter(clientRequest);
+    if (typeof validParameter == "string") {
+      return validParameter;
     }
-    return await getByLanguage(language);
+    return await getByLanguage(clientRequest.parameterName);
   }
   // async getByRegion(region: string) {
   //   if (!region) {
