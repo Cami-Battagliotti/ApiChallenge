@@ -9,8 +9,8 @@ client.on("connect", () => {
   //const requestedData = {requestedAction: "language",parameterName: "italian"};
   const requestedData = { requestedAction: "currency", parameterName: "pound" };
   //const requestedData = { requestedAction: "capital", parameterName: "london" };
-  //const requestedData = {requestedAction: "capitalAndForecast",parameterName: "london",date: "2024-08-10"};
-  //const requestedData = {requestedAction: "capitalAndSports",parameterName: "london" };
+  //const requestedData = {requestedAction: "capitalAndForecast",parameterName: "london",days: 3};
+  //const requestedData = {requestedAction: "capitalAndSports",parameterName: "london"};
 
   const requestMessage = JSON.stringify(requestedData);
   client.write(requestMessage);

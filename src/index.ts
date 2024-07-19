@@ -6,6 +6,7 @@ const server = net.createServer();
 
 server.on("connection", (socket) => {
   socket.on("data", async (clientRequest) => {
+    // Obtiene y devuelve la informacion solicitada al cliente al conectarse con los endpoints contenidos en la funcion main() del archivo app.ts
     const clientFeedback = await main(clientRequest);
     socket.write(clientFeedback);
   });

@@ -1,6 +1,7 @@
 import { API_URL_COUNTRIES } from "../constants";
 import { API_URL_WEATHER } from "../constants";
 
+//getAllData() => Trae toda la informacion de paises contenida en el body de la Api Rest Countries.
 export async function getAllData() {
   const response = await fetch(
     `${API_URL_COUNTRIES}all/?fields=name,capital,region,continents,currencies,languages`
@@ -9,6 +10,7 @@ export async function getAllData() {
   return data;
 }
 
+// getSelectedData() => Obtiene la informacion de paises filtrada segun el tipo de dato solicitado.
 export async function getSelectedData(
   requestedService: string,
   parameterName: string
@@ -20,13 +22,13 @@ export async function getSelectedData(
   return inputData;
 }
 
-// current, forecast, sports.
+//getWeatherData => Obtiene la informacion del clima filtrada segun el tipo de dato solicitado.
 export async function getWeatherData(
   requestedService: string,
   parameterName: string,
-  date?: string
+  days?: number
 ) {
-  const API_URL_TOTAL = `${API_URL_WEATHER}${requestedService}.json?key=4ec1c0a249cf487cb71103019241607&q=${parameterName}&dt=${date}`;
+  const API_URL_TOTAL = `${API_URL_WEATHER}${requestedService}.json?key=4ec1c0a249cf487cb71103019241607&q=${parameterName}&days=${days}`;
   const response = await fetch(API_URL_TOTAL);
   const inputData = await response.json();
 
@@ -34,3 +36,4 @@ export async function getWeatherData(
 }
 
 //getWeatherData("forecast", "rome", "2024-07-13", 3);
+//http://api.weatherapi.com/v1/forecast.json?key=4ec1c0a249cf487cb71103019241607&q=London&days=3

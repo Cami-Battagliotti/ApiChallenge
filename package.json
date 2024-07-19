@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node ./src/index.ts",
-    "db": "ts-node ./src/DB/index.ts",
     "test": "ts-node ./src/app.ts",
-    "mod": "ts-node ./src/models/weather.ts",
-    "con": "ts-node ./src/controllers/weather.ts",
-    "cmod": "ts-node ./src/models/countries.ts",
     "cl": "ts-node ./src/client.ts"
   },
   "keywords": [],

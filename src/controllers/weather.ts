@@ -5,20 +5,18 @@ import {
 } from "../models/weather";
 
 class WeatherControllers {
+  // getCurrentWeather() => Solicita a models el clima actual de la ciudad indicada por parametro
   async getCurrentWeather(city: string) {
-    // if (!city) {
-    //   return ResponseStatus.MISSING_DATA;
-    // } else if (typeof city != "string") {
-    //   return ResponseStatus.BAD_REQUEST;
-    // }
-
     return await getCurrentWeather(city);
   }
-  async getWeatherForecast(city: string, startDate: string) {
-    const forecastData = await getWeatherForecast(city, startDate);
+
+  // getWeatherForecast() => Solicita a models el pronostico del clima de la ciudad indicada por parametro.
+  async getWeatherForecast(city: string, days: number) {
+    const forecastData = await getWeatherForecast(city, days);
     return forecastData;
   }
 
+  // getSportsEvents() => Solicita los proximos eventos deportivos de la ciudad indicada por parametro.
   async getSportsEvents(city: string) {
     return await getSportsEvents(city);
   }

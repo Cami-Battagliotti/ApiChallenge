@@ -13,6 +13,7 @@ import {
   CapitalAndSports,
 } from "./utils/aux_functions";
 
+// main() => Contiene todos los endpoints posibles para solicitar y enviar al cliente la informacion solicitada.
 export async function main(clientMessage) {
   const message = clientMessage.toString();
   const clientRequest = JSON.parse(message);
@@ -46,7 +47,6 @@ export async function main(clientMessage) {
     return capitalAndSports;
   } else {
     const response = JSON.stringify(ResponseStatus.BAD_REQUEST);
-
     return response;
   }
 }
