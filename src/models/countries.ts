@@ -66,8 +66,6 @@ const {
   getByCapital,
 } = countries;
 
-//countries.getByCapital("london");
-
 export {
   getAllCountries,
   getByCountryCommonName,

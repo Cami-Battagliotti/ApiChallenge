@@ -14,7 +14,7 @@ client.on("connect", () => {
     parameterName: "london",
     days: 3,
   };
-  //const requestedData = {requestedAction: "capitalAndSports",parameterName: "london"};
+  //const requestedData = {requestedAction: "capitalAndSports",parameterName: "bern"};
 
   const requestMessage = JSON.stringify(requestedData);
   client.write(requestMessage);

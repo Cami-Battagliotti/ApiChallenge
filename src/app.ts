@@ -13,7 +13,7 @@ import {
   CapitalAndSports,
 } from "./utils/aux_functions";
 
-// main() => Contiene todos los endpoints posibles para solicitar y enviar al cliente la informacion solicitada.
+// main() => Contiene todos los endpoints posibles para solicitar y enviar al cliente la informacion solicitada. Devolvera un mensaje de error (Bad request) en caso que la opcion de busqueda no se encuentre entre las opciones disponibles.
 export async function main(clientMessage) {
   const message = clientMessage.toString();
   const clientRequest = JSON.parse(message);

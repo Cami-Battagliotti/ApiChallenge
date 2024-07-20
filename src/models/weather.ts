@@ -72,20 +72,14 @@ class WeatherModels {
         day: { maxtemp_c, mintemp_c, totalprecip_mm },
       } = day;
 
-      // Creo un nuevo objeto con la informacion contenida en las variables obtenidas de la desestructuracion, y lo agrego al nuevo array que contendra la informacion del pronostico (forecast) simplificada.
+      // Creo un nuevo objeto con la informacion contenida en las variables obtenidas de la desestructuracion, y lo agrego al nuevo objeto que contendra la informacion del pronostico (forecast) simplificada.
       const forecastData = {
-        //date,
         maxtemp_c,
         mintemp_c,
         totalprecip_mm,
       };
       relevantForecastData[`Day ${date}`] = forecastData;
-      //relevantForecastData.push(forecastData);
     }
-
-    // const forecastFiltered = {};
-    // let counter = 0
-    // relevantForecastData.forEach((elem) => (forecastFiltered[counter] = elem));
 
     // Creo un nuevo objeto con la informacion relevante contenida en las variables obtenidas de la desestructuracion.
     const relevantData = {
@@ -102,7 +96,6 @@ class WeatherModels {
       forecastday: relevantForecastData,
     };
 
-    //console.log(relevantForecastData);
     return relevantData;
   }
 
@@ -115,8 +108,6 @@ class WeatherModels {
 
 // Instancio el objeto para acceder a sus metodos y exportarlos.
 const weatherData = new WeatherModels();
-
-//weatherData.getWeatherForecast("london", 3);
 
 const { getCurrentWeather, getWeatherForecast, getSportsEvents } = weatherData;
 

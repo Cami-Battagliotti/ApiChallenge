@@ -21,8 +21,6 @@ function validateParameter(clientRequest) {
 
 // CapitalAndCurrentWeather() => Obtiene y devuelve la informacion de paises filtrados por la capital indicada junto al clima actual de la misma.
 async function CapitalAndCurrentWeather(clientRequest) {
-  // const regex = /^[a-zA-Z]+$/;
-  // const letters = regex.test(clientRequest.parameterName);
   const validParameter = validateParameter(clientRequest);
   if (typeof validParameter == "string") {
     return validParameter;

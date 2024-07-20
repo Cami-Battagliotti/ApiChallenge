@@ -42,11 +42,6 @@ class CountriesControllers {
     return await getByLanguage(clientRequest.parameterName);
   }
   // async getByRegion(region: string) {
-  //   if (!region) {
-  //     return ResponseStatus.MISSING_DATA;
-  //   } else if (typeof region != "string") {
-  //     return ResponseStatus.BAD_REQUEST;
-  //   }
   //   return await getByRegion(region);
   // }
 }

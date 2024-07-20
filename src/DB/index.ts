@@ -35,5 +35,4 @@ export async function getWeatherData(
   return inputData;
 }
 
-//getWeatherData("forecast", "rome", "2024-07-13", 3);
-//http://api.weatherapi.com/v1/forecast.json?key=4ec1c0a249cf487cb71103019241607&q=London&days=3
+//getWeatherData("forecast", "rome", 3);
