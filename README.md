@@ -16,4 +16,4 @@ Al solicitar la informacion es necesario tener en cuenta que deberá utilizar lo
 - "currency" ==> Es necesario ingresar el nombre de la **moneda** para obtener una lista de paises ddonde se utiliza.
 - "capital" ==> Es necesario ingresar el nombre de la **ciudad** para obtener informacion del pais donde esta ubicada y el clima actual en la misma.
 - "capitalAndForecast" ==> Es necesario ingresar el nombre de la **ciudad** para obtener informacion del pais donde esta ubicada y la **cantidad de dias** para conocer el pronostico del clima en la misma.
-- "capitalAndSports" ==> Es necesario ingresar el nombre de la **ciudad** para obtener informacion del pais donde esta ubicada y los eventos deportivos en la misma.
+- "capitalAndSports" ==> Es necesario ingresar el nombre de la **ciudad** para obtener informacion del pais donde esta ubicada y los proximos eventos deportivos en la misma.

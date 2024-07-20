@@ -7,9 +7,13 @@ client.on("connect", () => {
   // const requestedData = { requestedAction: "all"};
   //const requestedData = { requestedAction: "name", parameterName: "italy" };
   //const requestedData = {requestedAction: "language",parameterName: "italian"};
-  const requestedData = { requestedAction: "currency", parameterName: "pound" };
+  //const requestedData = { requestedAction: "currency", parameterName: "pound" };
   //const requestedData = { requestedAction: "capital", parameterName: "london" };
-  //const requestedData = {requestedAction: "capitalAndForecast",parameterName: "london",days: 3};
+  const requestedData = {
+    requestedAction: "capitalAndForecast",
+    parameterName: "london",
+    days: 3,
+  };
   //const requestedData = {requestedAction: "capitalAndSports",parameterName: "london"};
 
   const requestMessage = JSON.stringify(requestedData);

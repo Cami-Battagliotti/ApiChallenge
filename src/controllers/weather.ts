@@ -24,8 +24,6 @@ class WeatherControllers {
 
 const weatherData = new WeatherControllers();
 
-//weatherData.getWeatherForecast("london", "2024-07-10");
-
 const {
   getCurrentWeather: currentWeather,
   getWeatherForecast: weatherForecast,

@@ -63,7 +63,7 @@ class WeatherModels {
       forecast: { forecastday },
     } = forecastData;
 
-    let relevantForecastData = [];
+    let relevantForecastData = {};
     // Itero cada objeto que contiene la informacion del pronostico de cada dia solicitado para filtrarla.
     for (let day of forecastData.forecast.forecastday) {
       // Desestructuro el/los objetos contenidos dentro del array de forecastday para acceder solo a la informacion que necesito:
@@ -74,13 +74,18 @@ class WeatherModels {
 
       // Creo un nuevo objeto con la informacion contenida en las variables obtenidas de la desestructuracion, y lo agrego al nuevo array que contendra la informacion del pronostico (forecast) simplificada.
       const forecastData = {
-        date,
+        //date,
         maxtemp_c,
         mintemp_c,
         totalprecip_mm,
       };
-      relevantForecastData.push(forecastData);
+      relevantForecastData[`Day ${date}`] = forecastData;
+      //relevantForecastData.push(forecastData);
     }
+
+    // const forecastFiltered = {};
+    // let counter = 0
+    // relevantForecastData.forEach((elem) => (forecastFiltered[counter] = elem));
 
     // Creo un nuevo objeto con la informacion relevante contenida en las variables obtenidas de la desestructuracion.
     const relevantData = {
@@ -96,7 +101,8 @@ class WeatherModels {
       },
       forecastday: relevantForecastData,
     };
-    // console.log(relevantData);
+
+    //console.log(relevantForecastData);
     return relevantData;
   }
 
@@ -110,7 +116,7 @@ class WeatherModels {
 // Instancio el objeto para acceder a sus metodos y exportarlos.
 const weatherData = new WeatherModels();
 
-weatherData.getWeatherForecast("london", 3);
+//weatherData.getWeatherForecast("london", 3);
 
 const { getCurrentWeather, getWeatherForecast, getSportsEvents } = weatherData;
 

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node ./src/index.ts",
     "test": "ts-node ./src/app.ts",
-    "cl": "ts-node ./src/client.ts"
+    "cl": "ts-node ./src/client.ts",
+    "compile": "tsc"
   },
   "keywords": [],
   "author": "",
