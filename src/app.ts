@@ -13,7 +13,7 @@ import {
   CapitalAndSports,
 } from "./utils/aux_functions";
 
-// main() => Contiene todos los endpoints posibles para solicitar y enviar al cliente la informacion solicitada. Devolvera un mensaje de error (Bad request) en caso que la opcion de busqueda no se encuentre entre las opciones disponibles.
+// main() => Contiene todos los endpoints posibles para solicitar y enviar al cliente la informacion solicitada. Devolvera un mensaje de error (Badrequest) en caso que la opcion de busqueda no se encuentre entre las opciones disponibles.
 export async function main(clientMessage) {
   const message = clientMessage.toString();
   const clientRequest = JSON.parse(message);
@@ -21,15 +21,14 @@ export async function main(clientMessage) {
   if (clientRequest.requestedAction == "all") {
     const collectedData = await allCountries();
     const clientFeedback = JSON.stringify(collectedData);
+    //console.log(clientFeedback);
     return clientFeedback;
   } else if (clientRequest.requestedAction == "language") {
     const collectedData = await countriesByLanguage(clientRequest);
     const clientFeedback = JSON.stringify(collectedData);
     return clientFeedback;
   } else if (clientRequest.requestedAction == "name") {
-    const collectedData = await countriesByCommonName(
-      clientRequest.parameterName
-    );
+    const collectedData = await countriesByCommonName(clientRequest);
     const clientFeedback = JSON.stringify(collectedData);
     return clientFeedback;
   } else if (clientRequest.requestedAction == "currency") {
@@ -50,3 +49,6 @@ export async function main(clientMessage) {
     return response;
   }
 }
+// const requestedData = { requestedAction: "all" };
+// const requestMessage = JSON.stringify(requestedData);
+// main(requestMessage);

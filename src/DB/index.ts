@@ -10,6 +10,8 @@ export async function getAllData() {
   return data;
 }
 
+getAllData();
+
 // getSelectedData() => Obtiene la informacion de paises filtrada segun el tipo de dato solicitado.
 export async function getSelectedData(
   requestedService: string,

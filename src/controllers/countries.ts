@@ -48,6 +48,9 @@ class CountriesControllers {
 
 const countries = new CountriesControllers();
 
+const requestedData = { requestedAction: "name", parameterName: "ita" };
+countries.getByCountryCommonName(requestedData.parameterName);
+
 const {
   getAllCountries: allCountries,
   getByCapital: countriesByCapital,

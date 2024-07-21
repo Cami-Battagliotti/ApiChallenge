@@ -11,7 +11,6 @@ function validateParameter(clientRequest) {
   // Expresion regular que verifica que el parametro indicado en regex.test() solo contenga letras.
   const regex = /^[a-zA-Z]*$/;
   const letters = regex.test(clientRequest.parameterName);
-
   if (!letters || typeof clientRequest.parameterName != "string") {
     return JSON.stringify(ResponseStatus.BAD_REQUEST);
   } else if (!clientRequest.parameterName) {
@@ -65,6 +64,8 @@ async function CapitalAndSports(clientRequest) {
   const clientFeedback = JSON.stringify(collectedData);
   return clientFeedback;
 }
+
+validateParameter({ requestedAction: "name", parameterName: "1" });
 
 export {
   validateParameter,

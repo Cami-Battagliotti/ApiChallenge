@@ -9,6 +9,7 @@ class CountriesModels {
 
   // getByCountryCommonName() =>  Solicita la informacion de paises filtrando por el nombre No oficial.
   async getByCountryCommonName(countryName: string) {
+    // No utilizo getSelectedData() porque incluye en la busqueda el nombre oficial.
     const allCountries = await getAllData();
     //const allCountries = await this.getAllCountries();
     const filteredCountries = allCountries.filter((el) =>
@@ -58,6 +59,8 @@ class CountriesModels {
 }
 
 const countries = new CountriesModels();
+countries.getByCountryCommonName("italy");
+
 const {
   getAllCountries,
   getByCountryCommonName,
