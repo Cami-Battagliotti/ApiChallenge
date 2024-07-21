@@ -59,7 +59,6 @@ class CountriesModels {
 }
 
 const countries = new CountriesModels();
-countries.getByCountryCommonName("italy");
 
 const {
   getAllCountries,

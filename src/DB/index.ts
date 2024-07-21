@@ -36,5 +36,3 @@ export async function getWeatherData(
 
   return inputData;
 }
-
-//getWeatherData("forecast", "rome", 3);

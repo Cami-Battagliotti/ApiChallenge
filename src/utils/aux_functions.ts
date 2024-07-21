@@ -65,8 +65,6 @@ async function CapitalAndSports(clientRequest) {
   return clientFeedback;
 }
 
-validateParameter({ requestedAction: "name", parameterName: "1" });
-
 export {
   validateParameter,
   CapitalAndCurrentWeather,
